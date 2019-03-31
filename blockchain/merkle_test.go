@@ -7,6 +7,7 @@ import (
 	"github.com/checksum0/go-cryptoutils/chainhash"
 )
 
+// TestMerkleTreeStore ...
 func TestMerkleTreeStore(t *testing.T) {
 	merklesStr := []string{
 		"8c14f0db3df150123e6f3dbbf30f8b955a8249b62ac1d1ff16284aefa3d06d87",
@@ -39,10 +40,11 @@ func TestMerkleTreeStore(t *testing.T) {
 	merkleTree := BuildMerkleTreeStore(merkles)
 
 	if !reflect.DeepEqual(merkleTree, wantMerkles) {
-		t.Errorf("BuildMerkleTreeStore: merkle root mismatch - got %v (want %v)", merkles, wantMerkles)
+		t.Errorf("BuildMerkleTreeStore: merkle tree mismatch - got %v (want %v)", merkles, wantMerkles)
 	}
 }
 
+// TestMerkleTreeRoot ...
 func TestMerkleTreeRoot(t *testing.T) {
 	merklesStr := []string{
 		"8c14f0db3df150123e6f3dbbf30f8b955a8249b62ac1d1ff16284aefa3d06d87",
@@ -61,6 +63,6 @@ func TestMerkleTreeRoot(t *testing.T) {
 	wantRoot, _ := chainhash.NewHashFromString("f3e94742aca4b5ef85488dc37c06c3282295ffec960994b2c0d5ac2a25a95766")
 
 	if !reflect.DeepEqual(merkleRoot, wantRoot) {
-		t.Errorf("BuildMerkleTreeStore: merkle root mismatch - got %v (want %v)", merkleRoot, wantRoot)
+		t.Errorf("BuildMerkleTreeRoot: merkle root mismatch - got %v (want %v)", merkleRoot, wantRoot)
 	}
 }
