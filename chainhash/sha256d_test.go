@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// TestSHA256Funcs ...
+// TestSHA256Funcs tests single SHA256 hashing (for both bytes and chainhash.Hash data type)
 func TestSHA256Funcs(t *testing.T) {
 	tests := []struct {
 		out string
@@ -62,7 +62,7 @@ func TestSHA256Funcs(t *testing.T) {
 	}
 }
 
-// TestSHA256dFuncs ...
+// TestSHA256dFuncs tests double SHA256 hashing (for both bytes and chainhash.Hash data type)
 func TestSHA256dFuncs(t *testing.T) {
 	tests := []struct {
 		out string
